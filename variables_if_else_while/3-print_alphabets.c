@@ -7,27 +7,21 @@
  */
 int main(void)
 {
-    char lowercase = 'a';
-    char uppercase = 'A';
     int i;
 
     /* Print lowercase letters */
     for (i = 0; i < 26; i++)
     {
-        putchar(lowercase + i);
+        putchar('a' + i);
     }
-
-    /* Print a newline */
-    putchar('\n');
 
     /* Print uppercase letters */
     for (i = 0; i < 26; i++)
     {
-        putchar(uppercase + i);
+        putchar('A' + i);
     }
 
-    /* Print a newline */
-    putchar('\n');
+    putchar('\n');  /* Print a newline */
 
     return (0);
 }
