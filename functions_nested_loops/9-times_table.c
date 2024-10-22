@@ -26,8 +26,13 @@ void times_table(void)
                 {
                     _putchar(' ');          /* Print a space for single-digit products */
                 }
-                _putchar((product / 10) + '0'); /* Print the first digit if it's two digits */
-                _putchar((product % 10) + '0'); /* Print the last digit of the product */
+
+                /* Print the digits of the product */
+                if (product >= 10)
+                {
+                    _putchar((product / 10) + '0'); /* Print the first digit */
+                }
+                _putchar((product % 10) + '0'); /* Print the last digit */
             }
         }
         _putchar('\n');                  /* New line after each row */
