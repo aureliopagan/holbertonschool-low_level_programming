@@ -1,0 +1,27 @@
+#include "main.h"
+
+/**
+ * more_numbers - Prints the numbers from 0 to 14, ten times.
+ */
+void more_numbers(void)
+{
+	int i, j;
+
+	for (i = 0; i < 10; i++)  /* Repeat 10 times */
+	{
+		for (j = 0; j <= 14; j++)  /* Print numbers from 0 to 14 */
+		{
+			if (j > 9)  /* If the number is two digits */
+			{
+				_putchar('1');  /* Print the first digit */
+				_putchar((j % 10) + '0');  /* Print the second digit */
+			}
+			else
+			{
+				_putchar(j + '0');  /* Print single digit */
+			}
+		}
+		_putchar('\n');  /* Print a newline after each row */
+	}
+}
+
