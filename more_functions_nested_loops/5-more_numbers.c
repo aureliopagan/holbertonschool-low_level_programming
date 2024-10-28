@@ -21,7 +21,6 @@ void more_numbers(void)
 				_putchar(j + '0');  /* Print single digit */
 			}
 		}
-		_putchar('\n');  /* Print a newline after each row */
 	}
 }
 
