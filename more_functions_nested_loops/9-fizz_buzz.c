@@ -1,39 +1,36 @@
 #include <stdio.h>
-#include "main.h"
-
 /**
- * fizz_buzz - prints the FizzBuzz sequence from 1 to 100.
+ * main - this is the main jajja
  *
- * Return: void
- */
-void fizz_buzz(void)
+ *
+ * Return: 0
+**/
+int main(void)
 {
-	int i;
-
-	for (i = 1; i <= 100; i++)
+int n;
+	for (n = 1; n <= 100; n++)
 	{
-		if (i % 3 == 0 && i % 5 == 0)
-		{
-			printf("FizzBuzz");
-		}
-		else if (i % 3 == 0)
-		{
-			printf("Fizz");
-		}
-		else if (i % 5 == 0)
+		if (n == 100)
 		{
 			printf("Buzz");
 		}
+		else if ((n % 3 == 0) && (n % 5 == 0))
+		{
+			printf("FizzBuzz ");
+		}
+		else if (n % 3 == 0)
+		{
+			printf("Fizz ");
+		}
+		else if (n % 5 == 0)
+		{
+			printf("Buzz ");
+		}
 		else
 		{
-			printf("%d", i);
-		}
-
-		if (i < 100)  /* Print a space after each number or word except the last one */
-		{
-			printf(" ");
+			printf("%d ", n);
 		}
 	}
-	printf("\n");  /* Print a new line at the end */
+	printf("\n");
+return  (0);
 }
-
