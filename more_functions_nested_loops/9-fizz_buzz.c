@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - this is the main jajja
+ * main - main :)
  *
  *
  * Return: 0
