@@ -4,9 +4,7 @@
  * print_line - Draws a straight line in the terminal.
  * @n: The number of times to print the character '_'.
  *
- * Description: This function prints the character '_' to the terminal
- *              for a given number of times specified by the parameter
- *              'n'. If 'n' is less than or equal to 0, nothing is printed.
+ * Return: void
 **/
 
 
