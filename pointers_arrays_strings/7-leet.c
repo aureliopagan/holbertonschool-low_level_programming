@@ -8,7 +8,7 @@
  */
 char *leet(char *str)
 {
-	int i, j;  /* Declare j here for C89 compliance */
+	int i, j;
 	char normal_chars[] = "aeotlAEOTL"; /* Characters to be replaced */
 	char leet_chars[] = "43071"; /* Characters to replace with */
 
@@ -18,7 +18,7 @@ char *leet(char *str)
 		{
 			if (str[i] == normal_chars[j])
 			{
-				str[i] = leet_chars[j / 2]; /* Replace the character */
+				str[i] = leet_chars[j / 2]; /* Replace with leet character */
 				break;
 			}
 		}
