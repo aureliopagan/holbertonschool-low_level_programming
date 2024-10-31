@@ -1,30 +1,25 @@
 #include "main.h"
-
 /**
- * leet - Encodes a string into 1337 (leet speak)
- * @str: The string to be encoded
+ * leet - the name
  *
- * Return: A pointer to the encoded string
- */
-char *leet(char *str)
+ * @s: varieble name
+ * Return: c
+**/
+char *leet(char *s)
 {
-	int i, j;
-	char normal_chars[] = "aeotlAEOTL"; /* Characters to be replaced */
-	char leet_chars[] = "43071"; /* Characters to replace with */
+	char *c = s;
+	char a[] = {'a', 'e', 'o', 't', 'l'};
+	char n[] = { 4, 3, 0, 7, 1 };
+	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
+	while (*s)
 	{
-		for (j = 0; j < 10; j++)
+		for (i = 0; i < 5; i++)
 		{
-			if (str[i] == normal_chars[j])
-			{
-				str[i] = leet_chars[j / 2]; /* Replace with leet character */
-				break;
-			}
+			if (*s == a[i] || *s == a[i] - 32)
+				*s = n[i] + '0';
 		}
+		s++;
 	}
-
-	return (str);  /* Parentheses around return value */
-	str[i] = '\0';
+return (c);
 }
-
