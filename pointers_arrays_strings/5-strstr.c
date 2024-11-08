@@ -1,17 +1,43 @@
 #include "main.h"
-#include <stdio.h>
+/**
+ * _strstr - namo of funtion five
+ *
+ * @haystack: name variable
+ * @needle: the other name
+ *
+ * Return: p or null
+ */
 
-int main(void)
+char *_strstr(char *haystack, char *needle)
 {
-    char *s = "hello, world";
-    char *f = "world";
-    char *t;
+	const char *hay;
+	const char *nee;
+		nee = needle;
 
-    t = _strstr(s, f);
-    if (t != NULL)
-    {
-        printf("%s\n", t);
-    }
-    return (0);
+		if (*nee == 0)
+		{
+			return (haystack);
+		}
+		for (; *haystack != 0; haystack += 1)
+		{
+			if (*haystack != *nee)
+			{
+				continue;
+			}
+			hay = haystack;
+
+			while (1)
+			{
+				if (*nee == 0)
+				{
+					return (haystack);
+				}
+				if (*hay++ != *nee++)
+				{
+					break;
+				}
+			}
+			nee = needle;
+		}
+		return ('\0');
 }
-
