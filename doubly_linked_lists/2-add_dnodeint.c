@@ -1,34 +1,30 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
+#include <stdlib.h>
 
 /**
- * main - check the code
+ * add_dnodeint - Write a function that adds a new node at the beginning
+ * @n: The value of the node
+ * @head: Set the next pointer to the current head
  *
- * Return: Always EXIT_SUCCESS.
+ * Return: the address of the new node
  */
-int main(void)
-{
-    dlistint_t *head;
-    dlistint_t *new;
-    dlistint_t hello = {8, NULL, NULL};
-    size_t n;
 
-    head = &hello;
-    new = malloc(sizeof(dlistint_t));
-    if (new == NULL)
-    {
-        dprintf(2, "Error: Can't malloc\n");
-        return (EXIT_FAILURE);
-    }
-    new->n = 9;
-    head->prev = new;
-    new->next = head;
-    new->prev = NULL;
-    head = new;
-    n = dlistint_len(head);
-    printf("-> %lu elements\n", n);
-    free(new);
-    return (EXIT_SUCCESS);
+dlistint_t *add_dnodeint(dlistint_t **head, const int n)
+{
+	dlistint_t *new_node;
+
+	new_node = malloc(sizeof(dlistint_t));
+	if (new_node == NULL)
+	return (NULL);
+
+	new_node->n = n;
+	new_node->prev = NULL;
+	new_node->next = *head;
+
+	if (*head != NULL)
+	(*head)->prev = new_node;
+
+	*head = new_node;
+
+	return (new_node);
 }
