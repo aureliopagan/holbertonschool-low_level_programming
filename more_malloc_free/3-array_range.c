@@ -1,10 +1,10 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * array_range - name of th efunction 
+ * array_range - the function name
  * @min: the name variable
- * @max:the max variable
- * Return: ptr to a new array
+ * @max: .......the max variable
+ * Return: ptr to new array of NULL
 **/
 int *array_range(int min, int max)
 {
