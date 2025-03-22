@@ -1,10 +1,10 @@
 #include <stdlib.h>
 
 /**
- * string_nconcat - Concats two strings.
- * @s1
- * @s2
- * @n
+ * string_nconcat - Concatenates two strings with a limit on the second string.
+ * @s1: The first string.
+ * @s2: The second string.
+ * @n: The number of bytes from s2 to concatenate.
  *
  * Return: A pointer to the newly allocated concatenated string
  */
