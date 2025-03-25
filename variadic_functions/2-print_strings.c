@@ -34,8 +34,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", str);
 		}
 
-		/* If a separator is provided and it's not the last string,
-		 * print the separator
+		/* If a separator is provided and it's not the last string, print
+		 * the separator.
 		 */
 		if (separator != NULL && i < n - 1)
 		{
