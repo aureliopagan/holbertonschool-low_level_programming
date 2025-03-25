@@ -3,9 +3,8 @@
 #include "variadic_functions.h"
 
 /**
- * print_strings - A function that prints a series of strings,
- * followed by a newline.
- * @separator: The string to be printed between each string.
+ * print_strings - A function that prints strings, followed by a new line.
+ * @separator: The string that will be printed between the strings.
  * @n: The number of strings passed to the function.
  */
 
@@ -15,16 +14,15 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	char *str;
 
-	/* Initialize va_list to start processing the variable arguments */
+	/* Initialize the va_list to handle the variable arguments */
 	va_start(args, n);
 
-	/* Loop through each string argument and print it */
+	/* Loop through each argument and print the string */
 	for (i = 0; i < n; i++)
 	{
-		/* Retrieve the next string argument */
 		str = va_arg(args, char *);
 
-		/* Check if the string is NULL, and print "(nil)" if it is */
+		/* Check if the string is NULL and print "(nil)" if so */
 		if (str == NULL)
 		{
 			printf("(nil)");
@@ -34,19 +32,17 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", str);
 		}
 
-		/* If a separator is provided and it's not the last string, print 
-		 * the separator.
-		 */
+		/* If a separator is provided and it's not the last string, print it */
 		if (separator != NULL && i < n - 1)
 		{
 			printf("%s", separator);
 		}
 	}
 
-	/* Clean up after using va_list */
+	/* Clean up the va_list after use */
 	va_end(args);
 
-	/* Print a newline character after all the strings are printed */
+	/* Print a newline character after printing all the strings */
 	printf("\n");
 }
 
