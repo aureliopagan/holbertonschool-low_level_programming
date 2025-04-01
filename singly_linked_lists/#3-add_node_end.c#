@@ -1,10 +1,11 @@
 #include "lists.h"
 #include <stdlib.h>
+
 /**
- * my_strdup - a replica of strdup
- * @src: the source to copy
- * Return: new str
-**/
+ * my_strdup - custom implementation of the strdup function
+ * @src: the string to be copied
+ * Return: a pointer to the newly created string, or NULL on failure
+ */
 char *my_strdup(const char *src)
 {
 	size_t length = 0;
@@ -28,11 +29,12 @@ char *my_strdup(const char *src)
 }
 
 /**
- * add_node_end - the name of function
- * @head: the head.....
- * @str: the string......i think
- * Return: new_node
-**/
+ * add_node_end - appends a new node to the end of a linked list
+ * @head: pointer to the first node in the list
+ * @str: string to store in the new node
+ * 
+ * Return: address of the new node, or NULL if the operation failed
+ */
 list_t *add_node_end(list_t **head, const char *str)
 {
 	list_t *new_node;
@@ -67,5 +69,7 @@ list_t *add_node_end(list_t **head, const char *str)
 			current = current->next;
 		current->next = new_node;
 	}
+
 	return (new_node);
 }
+
