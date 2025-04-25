@@ -2,60 +2,53 @@
 #include "dog.h"
 
 /**
- * init_dog - Creates and sets up a new dog structure
- * @name: Pointer to dog's name string
- * @age: Floating point value for dog's age
- * @owner: Pointer to owner's name string
+ * new_dog - creates a new dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
  *
- * Return: Pointer to allocated dog struct, NULL if allocation fails
+ * Return: pointer to the new dog_t struct or NULL if it fails
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-    dog_t *new_pup;
-    int len_name = 0, len_owner = 0;
-    int counter;
+	dog_t *dog;
+	int name_len = 0, owner_len = 0;
+	int i;
 
-    /* Calculate length of name string */
-    while (name[len_name])
-        len_name++;
+	while (name[name_len] != '\0')
+	name_len++;
 
-    /* Calculate length of owner string */
-    while (owner[len_owner])
-        len_owner++;
+	while (owner[owner_len] != '\0')
+	owner_len++;
 
-    /* Allocate memory for dog structure */
-    new_pup = malloc(sizeof(dog_t));
-    if (!new_pup)
-        return (NULL);
+	dog = malloc(sizeof(dog_t));
+	if (dog == NULL)
+	return (NULL);
 
-    /* Allocate and verify memory for name */
-    new_pup->name = malloc(len_name + 1);
-    if (!new_pup->name)
-    {
-        free(new_pup);
-        return (NULL);
-    }
+	dog->name = malloc(name_len + 1);
+	if (dog->name == NULL)
+	{
+		free(dog);
+		return (NULL);
+	}
 
-    /* Allocate and verify memory for owner */
-    new_pup->owner = malloc(len_owner + 1);
-    if (!new_pup->owner)
-    {
-        free(new_pup->name);
-        free(new_pup);
-        return (NULL);
-    }
+	dog->owner = malloc(owner_len + 1);
+	if (dog->owner == NULL)
+	{
+		free(dog->name);
+		free(dog);
+		return (NULL);
+	}
 
-    /* Copy name string */
-    for (counter = 0; counter < len_name; counter++)
-        new_pup->name[counter] = name[counter];
-    new_pup->name[len_name] = '\0';
+	for (i = 0; i < name_len; i++)
+	dog->name[i] = name[i];
+	dog->name[name_len] = '\0';
 
-    /* Copy owner string */
-    for (counter = 0; counter < len_owner; counter++)
-        new_pup->owner[counter] = owner[counter];
-    new_pup->owner[len_owner] = '\0';
+	for (i = 0; i < owner_len; i++)
+	dog->owner[i] = owner[i];
+	dog->owner[owner_len] = '\0';
 
-    new_pup->age = age;
+	dog->age = age;
 
-    return (new_pup);
+	return (dog);
 }
