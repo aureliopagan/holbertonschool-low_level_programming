@@ -2,26 +2,27 @@
 #include "dog.h"
 
 /**
- * print_dog - Displays the details of a dog structure
- * @d: Pointer to the dog structure containing info to display
+ * print_dog - prints a struct dog
+ * @d: pointer to struct dog to print
  *
- * Description: This function prints the name, age, and owner of a dog.
- *              If any field is NULL, it prints "(nil)" instead.
- *              The age is displayed with 6 decimal places for precision.
- *              Returns nothing.
+ * Description: Prints name, age, and owner of dog.
+ *              Prints (nil) if name or owner is NULL.
+ *              Age is printed with 6 decimal places.
  */
 void print_dog(struct dog *d)
 {
-    /* Check for NULL pointer first */
-    if (d == NULL)
-        return;
+	if (d == NULL)
+		return;
 
-    /* Handle name field - print (nil) if NULL */
-    printf("Name: %s\n", d->name ? d->name : "(nil)");
+	if (d->name == NULL)
+		printf("Name: (nil)\n");
+	else
+		printf("Name: %s\n", d->name);
 
-    /* Age always prints with 6 decimal precision */
-    printf("Age: %.6f\n", d->age);
+	printf("Age: %.6f\n", d->age);
 
-    /* Handle owner field same as name */
-    printf("Owner: %s\n", d->owner ? d->owner : "(nil)");
+	if (d->owner == NULL)
+		printf("Owner: (nil)\n");
+	else
+		printf("Owner: %s\n", d->owner);
 }
